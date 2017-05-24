@@ -7,10 +7,8 @@
   "author": "ytyszxf <ljz135790@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:aot:prod": "npm run clean:dist && npm run clean:aot && webpack --config config/webpack.prod.js  --progress --profile --bail",
-    "build:aot": "npm run build:aot:prod",
     "build:dev": "npm run clean:dist && webpack --config config/webpack.dev.js --progress --profile",
-    "build:prod": "npm run clean:dist && webpack --config config/webpack.prod.js  --progress --profile --bail",
+    "build:prod": "npm run clean:dist && tsc -p tsconfig.json --outDir dist --declaration true && cp -r src/lib/styles dist/.",
     "build": "npm run build:dev",
     "ci:aot": "npm run lint && npm run test && npm run build:aot && npm run e2e",
     "ci:jit": "npm run lint && npm run test && npm run build:prod && npm run e2e",
@@ -41,12 +39,7 @@
     "protractor:delay": "sleep 3 && npm run protractor",
     "protractor:live": "protractor --elementExplorer",
     "rimraf": "rimraf",
-    "server:dev:hmr": "npm run server:dev -- --inline --hot",
     "server:dev": "webpack-dev-server --config config/webpack.dev.js --open --progress --profile --watch --content-base src/",
-    "server:prod": "http-server dist -c-1 --cors",
-    "server:prod:ci": "http-server dist -p 3000 -c-1 --cors",
-    "server": "npm run server:dev",
-    "start:hmr": "npm run server:dev:hmr",
     "start": "npm run server:dev",
     "test": "npm run lint && karma start",
     "tslint": "tslint",
@@ -140,10 +133,12 @@
     "typedoc": "^0.5.3",
     "typescript": "^2.2.2",
     "url-loader": "^0.5.7",
+    "v8-lazy-parse-webpack-plugin": "^0.3.0",
     "webpack": "~2.4.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-dev-server": "2.4.2",
     "webpack-dll-bundles-plugin": "^1.0.0-beta.5",
+    "webpack-md5-hash": "^0.0.5",
     "webpack-merge": "~3.0.0"
   }
 }
