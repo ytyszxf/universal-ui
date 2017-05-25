@@ -15,7 +15,6 @@ export type LoadingState = 'Loading' | 'Default';
 @Component({
   selector: 'confirm-modal',
   templateUrl: './confirm-modal.component.html',
-  styleUrls: ['./confirm-modal.component.scss'],
 })
 export class ConfirmModalComponent {
 

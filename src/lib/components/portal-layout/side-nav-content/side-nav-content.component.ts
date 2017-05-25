@@ -13,7 +13,6 @@ import {
 @Component({
   selector: 'side-nav-content',
   templateUrl: './side-nav-content.component.html',
-  styleUrls: ['./side-nav-content.component.scss'],
 })
 export class SideNavContentCmp {
 

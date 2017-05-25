@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { E2E_APP_ROUTES } from './e2e-app/e2e-app.router';
 import { E2EApp, Home } from './e2e-app/e2e-app.component';
-import { MatCustomModule } from '../../src/lib/mat-custom.module';
+import { MatCustomModule } from '../../src/';
 import { AlertModalE2E } from './alert-modal/alert-modal.component';
 /**
  * NgModule that contains all Material modules that are required to serve the e2e-app.

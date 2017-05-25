@@ -4,7 +4,6 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'error-item',
   templateUrl: './error-item.component.html',
-  styleUrls: ['./error-item.component.scss'],
 })
 export class ErrorItemCmp {
   @Input() public errorName: string;

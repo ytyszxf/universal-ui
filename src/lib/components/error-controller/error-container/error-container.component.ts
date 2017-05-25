@@ -13,7 +13,6 @@ import { ErrorItemCmp } from '../error-item/error-item.component';
 @Component({
   selector: 'error-container',
   templateUrl: './error-container.component.html',
-  styleUrls: ['./error-container.component.scss']
 })
 export class ErrorContainerCmp implements OnChanges, AfterViewInit {
 
