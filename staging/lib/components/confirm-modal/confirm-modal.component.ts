@@ -14,7 +14,8 @@ export type LoadingState = 'Loading' | 'Default';
 
 @Component({
   selector: 'confirm-modal',
-  template:'<div class="modal-container"><md-dialog-content><p>{{message | async}}</p></md-dialog-content><div class="modal-footer"><ng-container *ngIf="state===\'Default\'"><div class="btn-item"><label><button md-icon-button (click)="ok.emit()"><md-icon>check</md-icon></button> {{okText}}</label></div><div class="btn-item"><label><button md-icon-button md-dialog-close><md-icon>close</md-icon></button> {{cancelText}}</label></div></ng-container><ng-container *ngIf="state!==\'Default\'"><div class="btn-item"><md-spinner></md-spinner></div></ng-container></div></div>',
+  template:'<div class="modal-container"><md-dialog-content><p>{{message}}</p></md-dialog-content><div class="modal-footer"><ng-container *ngIf="state===\'Default\'"><div class="btn-item"><label><button md-icon-button (click)="ok.emit()"><md-icon>check</md-icon></button> {{okText}}</label></div><div class="btn-item"><label><button md-icon-button md-dialog-close><md-icon>close</md-icon></button> {{cancelText}}</label></div></ng-container><ng-container *ngIf="state!==\'Default\'"><div class="btn-item"><md-spinner></md-spinner></div></ng-container></div></div>',
+  styles: [`md-dialog-content {  text-align: center; }.modal-footer {  display: flex;  justify-content: center;  align-content: center; }.btn-item {  width: 85px;  font-size: 13px; }  .btn-item md-icon {    width: 40px;    height: 40px;    font-size: 23px;    text-align: center;    line-height: 40px; }    .btn-item md-icon .mat-icon {      line-height: 40px !important; }md-spinner {  margin: 0px auto;  width: 40px;  height: 40px; }`]
 })
 export class ConfirmModalComponent {
 
@@ -43,16 +44,16 @@ export class ConfirmModalComponent {
     this._cancelText = config.cancelText || 'controls.cancel';
   }
 
-  get okText(): Observable<string> {
-    return Observable.of(this._okText);
+  get okText(): string {
+    return this._okText;
   }
 
-  get cancelText(): Observable<string> {
-    return Observable.of(this._cancelText);
+  get cancelText(): string {
+    return this._cancelText;
   }
 
-  get message(): Observable<string> {
-    return Observable.of(this._message);
+  get message(): string {
+    return this._message;
   }
 
 }

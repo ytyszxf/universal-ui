@@ -56,8 +56,7 @@ export class CMSideNavItem implements OnDestroy {
   private subscription: Subscription;
 
   public get isOpen(): boolean {
-    return (this.open === null && this.routerLinkActive.isActive)
-      || (this.open !== null && (this.routerLinkActive.isActive && this.open));
+    return this.routerLinkActive.isActive && !!this.open;
   }
 
   constructor(private router: Router) {

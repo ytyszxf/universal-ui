@@ -22,4 +22,5 @@
   @include cm-error-controller-theme($theme);
   @include cm-content-tainer-theme($theme);
   @include cm-confirm-modal-theme($theme);
+  @include cm-portal-modal-theme($theme);
 }

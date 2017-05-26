@@ -15,6 +15,7 @@ export type LoadingState = 'Loading' | 'Default';
 @Component({
   selector: 'confirm-modal',
   templateUrl: './confirm-modal.component.html',
+  styleUrls: ['./confirm-modal.component.scss']
 })
 export class ConfirmModalComponent {
 
@@ -43,16 +44,16 @@ export class ConfirmModalComponent {
     this._cancelText = config.cancelText || 'controls.cancel';
   }
 
-  get okText(): Observable<string> {
-    return Observable.of(this._okText);
+  get okText(): string {
+    return this._okText;
   }
 
-  get cancelText(): Observable<string> {
-    return Observable.of(this._cancelText);
+  get cancelText(): string {
+    return this._cancelText;
   }
 
-  get message(): Observable<string> {
-    return Observable.of(this._message);
+  get message(): string {
+    return this._message;
   }
 
 }

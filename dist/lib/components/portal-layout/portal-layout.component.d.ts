@@ -4,8 +4,6 @@ export declare class PortalLayoutCmp {
     loading: boolean;
     showSidenav: boolean;
     rootSection: NavSection;
-    menuVisible: boolean;
     toggleSidenav: EventEmitter<{}>;
-    constructor();
     sideNavToggleClick(): void;
 }

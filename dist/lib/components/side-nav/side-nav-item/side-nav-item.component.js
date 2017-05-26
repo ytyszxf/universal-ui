@@ -14,8 +14,7 @@ let CMSideNavItem = class CMSideNavItem {
         });
     }
     get isOpen() {
-        return (this.open === null && this.routerLinkActive.isActive)
-            || (this.open !== null && (this.routerLinkActive.isActive && this.open));
+        return this.routerLinkActive.isActive && !!this.open;
     }
     ngOnDestroy() {
         this.subscription.unsubscribe();

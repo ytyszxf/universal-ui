@@ -36,7 +36,6 @@ import {
     cm-toolbar-sub-title .back-btn {
       border-radius: 50%;
       background: #f2f6f7;
-      color: #00b4ff;
     }
   `]
 })

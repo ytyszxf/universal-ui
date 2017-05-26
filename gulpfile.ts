@@ -3,6 +3,7 @@ const path = require('path');
 import * as gulp from 'gulp';
 const gulpClean = require('gulp-clean');
 const embedTemplates = require('gulp-angular-embed-templates');
+const embedSass = require('gulp-angular2-embed-sass');
 const resolveBin = require('resolve-bin');
 import * as child_process from 'child_process';
 import gulpRunSequence = require('run-sequence');
@@ -15,7 +16,8 @@ const tsConfigPath = path.join(__dirname, 'tsconfig.prod.json');
 
 task(':ts:stage', function () {
     return gulp.src(path.join(SRC_ROOT, '**/*.ts')) // also can use *.js files 
-        .pipe(embedTemplates({sourceType:'ts'}))
+        .pipe(embedTemplates({ sourceType: 'ts' }))
+        .pipe(embedSass({}))
         .pipe(gulp.dest(STAGE_ROOT));
 });
 

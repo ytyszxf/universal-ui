@@ -1,7 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { StateType } from './confirm-modal.service';
 import { MdDialogRef } from '@angular/material';
-import { Observable } from 'rxjs/Observable';
 export interface ConfirmConifg {
     message?: string;
     okText?: string;
@@ -18,7 +17,7 @@ export declare class ConfirmModalComponent {
     private _cancelText;
     private _message;
     constructor(dialogRef: MdDialogRef<ConfirmModalComponent>);
-    readonly okText: Observable<string>;
-    readonly cancelText: Observable<string>;
-    readonly message: Observable<string>;
+    readonly okText: string;
+    readonly cancelText: string;
+    readonly message: string;
 }

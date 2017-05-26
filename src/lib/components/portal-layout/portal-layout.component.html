@@ -2,7 +2,7 @@
   <md-sidenav #sidenav mode="custom" [opened]="showSidenav">
     <side-nav-content 
       [rootSection]="rootSection" 
-      [menuVisible]="menuVisible" 
+      [menuVisible]="showSidenav" 
       (toggleMenu)="sideNavToggleClick()"
     ></side-nav-content>
   </md-sidenav>

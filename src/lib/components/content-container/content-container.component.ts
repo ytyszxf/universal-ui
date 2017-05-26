@@ -20,7 +20,8 @@ import { ToolbarSubTitle } from './toolbar-sub-title.component';
         <ng-content></ng-content>
       </div>
     </div>
-  `
+  `,
+  styleUrls: ['./content-container.scss']
 })
 export class ContentContainer implements AfterViewInit {
 
